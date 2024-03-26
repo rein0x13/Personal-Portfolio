@@ -15,7 +15,8 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->integer('percentage');
-            $table->integer('color')->nullable();
+            $table->integer('color')->default(1);
+            $table->boolean('visible')->default(true);
             $table->timestamps();
             $table->softDeletes();
         });

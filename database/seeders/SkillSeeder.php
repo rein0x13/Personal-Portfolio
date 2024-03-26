@@ -45,7 +45,8 @@ class SkillSeeder extends Seeder
             ],
         ];
 
-        foreach ($skills as $skill) {
+        foreach ($skills as $key => $skill) {
+            $skill['color'] = ($key % 5) + 1;
             Skill::create($skill);
         }
 

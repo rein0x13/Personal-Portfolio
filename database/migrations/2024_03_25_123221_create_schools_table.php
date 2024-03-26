@@ -17,7 +17,8 @@ return new class extends Migration
             $table->string('year_start');
             $table->string('year_end')->nullable();
             $table->string('course')->nullable();
-            $table->string('notes')->nullable();
+            $table->text('notes')->nullable();
+            $table->boolean('visible')->default(true);
             $table->timestamps();
             $table->softDeletes();
         });

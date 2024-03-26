@@ -15,14 +15,15 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->string('description')->nullable();
+            $table->boolean('visible')->default(true);
             $table->timestamps();
             $table->softDeletes();
         });
 
         Schema::create('tech_stacks', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('work_id');
-            $table->foreignId('skill_id');
+            $table->foreignId('work_id')->constrained()->onUpdate('cascade')->onDelete('cascade');
+            $table->foreignId('skill_id')->constrained()->onUpdate('cascade')->onDelete('cascade');
             $table->timestamps();
             $table->softDeletes();
         });

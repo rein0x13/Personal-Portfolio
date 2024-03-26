@@ -18,10 +18,10 @@ class FrontController extends Controller
     public function background()
     {
         return view('pages.background', [
-            'schools'   => School::all(),
-            'skills'    => Skill::all(),
-            'works'     => Work::all(),
-            'seminars'  => Seminar::all(),
+            'schools'   => School::whereVisible(true)->get(),
+            'skills'    => Skill::whereVisible(true)->get(),
+            'works'     => Work::whereVisible(true)->get(),
+            'seminars'  => Seminar::whereVisible(true)->get(),
         ]);
     }
 }

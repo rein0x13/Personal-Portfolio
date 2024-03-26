@@ -5,10 +5,11 @@ namespace App\Models;
 use App\Enums\ColorEnum;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Skill extends Model
 {
-    use HasFactory;
+    use HasFactory, SoftDeletes;
 
     protected $guarded = [];
 
@@ -21,16 +22,16 @@ class Skill extends Model
 
     public function getNameAttribute($value)
     {
-        return ucwords($value);
+        return (!empty($value)) ? ucwords($value) : null;
     }
 
-    public function getColorAttribute()
-    {
-        if (empty($this->color)) {
-            $id = (($this->id - 1) % 5) + 1;
-            return ColorEnum::tryFrom($id)->color();
-        }
-    }
+    // public function getColorAttribute()
+    // {
+    //     if (empty($this->color)) {
+    //         $id = (($this->id - 1) % 5) + 1;
+    //         return ColorEnum::tryFrom($id)->color();
+    //     }
+    // }
 
     public function techStack()
     {

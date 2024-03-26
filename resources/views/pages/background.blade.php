@@ -50,7 +50,9 @@
                     <div class="container p-2">
                         <h6>{{ $skill->name }}</h6>
                         <div class="progress" role="progressbar" aria-valuemax="100">
-                            <div class="progress-bar bg-{{ $skill->color }}" style="width: {{ $skill->percentage }}%">
+                            {{-- <div class="progress-bar bg-{{ $skill->color }}" style="width: {{ $skill->percentage }}%"> --}}
+                            <div class="progress-bar {{ $skill->color->getClass() }}"
+                                style="width: {{ $skill->percentage }}%">
                             </div>
                         </div>
                     </div>
@@ -69,7 +71,9 @@
                         <p>{{ $work->description }}</p>
                         <ul>
                             @foreach ($work->techStacks as $stack)
-                                <li>{{ $stack->skill->name }}</li>
+                                @if (!empty($stack->skill))
+                                    <li>{{ $stack->skill->name }}</li>
+                                @endif
                             @endforeach
                         </ul>
                         <div class="container">

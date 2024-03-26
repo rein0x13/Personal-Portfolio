@@ -18,10 +18,18 @@
                 <li class="nav-item">
                     <a href="{{ route('profile') }}" class="nav-link">BLOGS</a>
                 </li>
-                <li class="nav-item">
-                    <a href="{{ route('profile') }}"
-                        class="nav-link card text-light bg-black ps-lg-5 ms-lg-5 gradient-button">LOGIN</a>
-                </li>
+                @auth
+                    <li class="nav-item">
+                        <a href="{{ route('filament.dashboard.home') }}"
+                            class="nav-link card text-light bg-black ps-lg-5 ms-lg-5 gradient-button">DASHBOARD</a>
+                    </li>
+                @endauth
+                @guest
+                    <li class="nav-item">
+                        <a href="{{ route('filament.dashboard.auth.login') }}"
+                            class="nav-link card text-light bg-black ps-lg-5 ms-lg-5 gradient-button">LOGIN</a>
+                    </li>
+                @endguest
             </ul>
         </div>
     </div>

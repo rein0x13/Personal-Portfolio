@@ -17,6 +17,7 @@ return new class extends Migration
             $table->string('subheading')->nullable();
             $table->date('date')->nullable();
             $table->text('description')->nullable();
+            $table->boolean('visible')->default(true);
             $table->timestamps();
             $table->softDeletes();
         });
