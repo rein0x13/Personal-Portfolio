@@ -1,0 +1,184 @@
+/* @import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Poppins:wght@400;500;600&display=swap"); */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+:root {
+  /* --font-primary: "Inter", sans-serif; */
+  /* --font-primary: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif; */
+  --font-primary: "Poppins", sans-serif;
+  --foreground-color: #ffffff;
+  --background-color: #000000;
+  /* --accent-color: #6cace4; */
+  --accent-color: #ffce80;
+  --accent-color-secondary: #ffe8c4;
+  --accent-gradient: linear-gradient(45.4deg, #f49242 7.41%, #fbf2b1 98.99%);
+}
+
+.custom-bg-dark {
+  background-color: #1a1919 !important;
+}
+
+/* * {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+} */
+
+/* html {
+  scroll-behavior: smooth;
+} */
+
+body {
+  background: var(--background-color) !important;
+  color: var(--foreground-color);
+  font-family: var(--font-primary) !important;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/*
+.container {
+  max-width: 1080px;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+} */
+
+
+/* .nav-toggle {
+  display: inline-flex;
+  font-size: 1.25rem;
+  cursor: pointer;
+  color: var(--foreground-color);
+}
+
+.nav-close {
+  font-size: 1.5rem;
+  position: absolute;
+  top: 1rem;
+  right: 1.25rem;
+  cursor: pointer;
+}
+
+.nav-list {
+  display: flex;
+  flex-direction: column;
+  row-gap: 1.5rem;
+  list-style: none;
+} */
+
+.nav-link {
+  color: var(--foreground-color);
+  /* font-weight: 500; */
+  transition: 0.3s;
+  /* text-transform: uppercase; */
+  /* font-size: 1rem; */
+  letter-spacing: 0.1rem;
+  /* color: #ffffffb3; */
+}
+
+.navbar-brand {
+  font-weight: bold !important;
+}
+
+.nav-link:hover,
+.card>.container-medium>h2:hover,
+.nav-logo:hover,
+#cta-button:hover,
+i {
+  background: var(--accent-gradient);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  transition: all 0.3s ease-in-out;
+  transform: scale(1.02);
+}
+
+
+/* END OF HEADER */
+
+/* CARD SECTION */
+
+body::-webkit-scrollbar {
+  display: none;
+}
+
+.hero {
+  /* background: #111111; */
+  /* background: #1c1c1c; */
+  background: url("img/profilebg3.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  /* filter: brightness(0.5); */
+  /* background-attachment: fixed; */
+  /* background: red; */
+  position: relative;
+  /* z-index: -1; */
+  /* FIX LATER */
+  /* height: 80vh; */
+  padding: 6rem 0;
+  display: flex;
+  align-items: center;
+  font-family: var(--font-primary);
+}
+
+.gradient-text {
+  /* font-size: 3rem; */
+  /* background: -webkit-linear-gradient(
+    360deg,
+    rgba(152, 69, 232, 1) 0%,
+    rgba(51, 210, 255, 1) 25%,
+    rgba(221, 87, 137, 1) 50%
+  ); */
+  background: linear-gradient(45.4deg, #f49242 7.41%, #fbf2b1 98.99%) !important;
+  background-clip: text !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  width: fit-content !important;
+}
+
+.gradient-blue-pink {
+  background: linear-gradient(45.4deg, #4fa1f9 7.41%, #ec19f8 98.99%) !important;
+}
+
+.gradient-green-lime {
+  background: linear-gradient(45.4deg, #6cd87a 7.41%, #a0e470 98.99%) !important;
+}
+
+.gradient-yellow-orange {
+  background: linear-gradient(45.4deg, #f59b14 7.41%, #e0e036 98.99%) !important;
+}
+
+.gradient-orange-red {
+  background: linear-gradient(45.4deg, #ff911b 7.41%, #f5143a 98.99%) !important;
+}
+
+.gradient-blue-violet {
+  background: linear-gradient(45.4deg, #156ed4 7.41%, #c701fe 98.99%) !important;
+}
+
+.gradient-button {
+  font-weight: 300;
+  display: flex;
+  align-items: center;
+  /* margin-top: 1.5rem; */
+  cursor: pointer;
+  width: fit-content;
+  background: #0c0c0c5c;
+  border: 2px solid #ffce80b4 !important;
+  padding: 7px 20px;
+  /* border-radius: 5px; */
+}
+
+/* .card p {
+  color: #ffffffb3;
+  font-size: 0.8rem;
+  letter-spacing: 1px;
+  line-height: 1.3rem;
+} */
+
+/* END OF CARD SECTION */
+
+/* EXPERIENCE SECTION START */

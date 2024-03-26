@@ -1,7 +1,10 @@
 <?php
 
+use App\Http\Controllers\FrontController;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', function () {
-    return view('welcome');
-});
+/**
+ * Front End Routes
+ */
+Route::get('/', [FrontController::class, 'profile'])->name('profile');
+Route::get('/background', [FrontController::class, 'background'])->name('background');
