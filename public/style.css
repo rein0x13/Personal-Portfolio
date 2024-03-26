@@ -72,7 +72,7 @@ a {
   color: var(--foreground-color);
   /* font-weight: 500; */
   transition: 0.3s;
-  text-transform: uppercase;
+  /* text-transform: uppercase; */
   /* font-size: 1rem; */
   letter-spacing: 0.1rem;
   /* color: #ffffffb3; */
@@ -81,6 +81,7 @@ a {
 .nav-link:hover,
 .card>.container-medium>h2:hover,
 .nav-logo:hover,
+#cta-button:hover,
 i {
   background: var(--accent-gradient);
   background-clip: text;
@@ -95,13 +96,14 @@ i {
 
 /* CARD SECTION */
 
-/* body::-webkit-scrollbar {
+body::-webkit-scrollbar {
   display: none;
-} */
+}
+
 .hero {
   /* background: #111111; */
   /* background: #1c1c1c; */
-  background: url("img/cardbg2.jpg");
+  background: url("img/profilebg3.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -126,22 +128,22 @@ i {
     rgba(51, 210, 255, 1) 25%,
     rgba(221, 87, 137, 1) 50%
   ); */
-  background: linear-gradient(45.4deg, #f49242 7.41%, #fbf2b1 98.99%);
-  background-clip: text;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  width: fit-content;
+  background: linear-gradient(45.4deg, #f49242 7.41%, #fbf2b1 98.99%) !important;
+  background-clip: text !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  width: fit-content !important;
 }
 
 .gradient-button {
   font-weight: 300;
   display: flex;
   align-items: center;
-  margin-top: 1.5rem;
+  /* margin-top: 1.5rem; */
   cursor: pointer;
   width: fit-content;
   background: #0c0c0c5c;
-  border: 2px solid #ffce80b4;
+  border: 2px solid #ffce80b4 !important;
   padding: 7px 20px;
   /* border-radius: 5px; */
 }

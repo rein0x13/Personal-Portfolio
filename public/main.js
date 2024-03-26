@@ -1,1 +1,1 @@
-document.querySelector('body').style = 'height: 100vh; background: red'
+document.querySelector('body').style = 'height: 100vh; background: red';

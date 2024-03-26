@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\Work;
 use App\Models\Skill;
 use Illuminate\Database\Seeder;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
@@ -35,6 +36,10 @@ class SkillSeeder extends Seeder
                 'percentage'    => 85,
             ],
             [
+                'name'          => 'Filament',
+                'percentage'    => 83,
+            ],
+            [
                 'name'          => 'MySQL',
                 'percentage'    => 80,
             ],
@@ -42,6 +47,40 @@ class SkillSeeder extends Seeder
 
         foreach ($skills as $skill) {
             Skill::create($skill);
+        }
+
+
+        $works = [
+            [
+                'name'          => 'Clinica Zamoras',
+                'description'   => 'Creative Dev Labs [Ongoing]',
+            ],
+            [
+                'name'          => 'Portfolio',
+                'description'   => 'Personal [Current web application]',
+            ],
+        ];
+
+        foreach ($works as $work) {
+            $model = Work::create($work);
+            if ($model->id == 1) {
+                foreach (Skill::all() as $skill) {
+                    $model->techStacks()->create([
+                        'skill_id'  => $skill->id,
+                    ]);
+                }
+            } else {
+                $x = 1;
+                foreach (Skill::all() as $skill) {
+                    if ($x >= 6) {
+                        break;
+                    }
+                    $model->techStacks()->create([
+                        'skill_id'  => $skill->id,
+                    ]);
+                    $x++;
+                }
+            }
         }
     }
 }

@@ -11,9 +11,13 @@
                 I'm a backend PHP web developer from Eastern Visayas,
                 Philippines. It is my passion to build websites from scratch.
             </p>
-            <h4 class="button gradient-button text-white">Contact Me<i class="ri-arrow-right-s-line"></i></h4>
+            <h4 class="button card bg-black d-flex flex-row gradient-button text-white" id="cta-button">Contact Me<i
+                    class="ri-arrow-right-s-line"></i></h4>
         </div>
     </section>
+    <script>
+        document.getElementById('profile-nav-link').classList.add("gradient-text");
+    </script>
 
     <script src="main.js"></script>
 @endsection

@@ -10,11 +10,18 @@ class Skill extends Model
 {
     use HasFactory;
 
+    protected $guarded = [];
+
     public function casts()
     {
         return [
             'color' => ColorEnum::class,
         ];
+    }
+
+    public function getNameAttribute($value)
+    {
+        return ucwords($value);
     }
 
     public function getColorAttribute()
@@ -23,5 +30,10 @@ class Skill extends Model
             $id = (($this->id - 1) % 5) + 1;
             return ColorEnum::tryFrom($id)->color();
         }
+    }
+
+    public function techStack()
+    {
+        return $this->hasMany(TechStack::class);
     }
 }
