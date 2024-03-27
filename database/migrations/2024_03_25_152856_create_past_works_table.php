@@ -16,6 +16,7 @@ return new class extends Migration
             $table->string('name');
             $table->string('description')->nullable();
             $table->boolean('visible')->default(true);
+            $table->integer('sort')->nullable();
             $table->timestamps();
             $table->softDeletes();
         });
@@ -24,6 +25,7 @@ return new class extends Migration
             $table->id();
             $table->foreignId('work_id')->constrained()->onUpdate('cascade')->onDelete('cascade');
             $table->foreignId('skill_id')->constrained()->onUpdate('cascade')->onDelete('cascade');
+            $table->integer('sort')->nullable();
             $table->timestamps();
             $table->softDeletes();
         });

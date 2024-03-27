@@ -18,6 +18,9 @@
                 <li class="nav-item">
                     <a href="{{ route('profile') }}" class="nav-link">BLOGS</a>
                 </li>
+                <li class="nav-item" id="contact-nav-link">
+                    <a href="{{ route('contact') }}" class="nav-link">CONTACT</a>
+                </li>
                 @auth
                     <li class="nav-item">
                         <a href="{{ route('filament.dashboard.home') }}"

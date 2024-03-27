@@ -18,6 +18,7 @@ return new class extends Migration
             $table->date('date')->nullable();
             $table->text('description')->nullable();
             $table->boolean('visible')->default(true);
+            $table->integer('sort')->nullable();
             $table->timestamps();
             $table->softDeletes();
         });

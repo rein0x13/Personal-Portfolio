@@ -33,6 +33,7 @@ class SkillResource extends Resource
                     ->numeric(),
                 Forms\Components\Select::make('color')
                     ->options(ColorEnum::class)
+                    ->native(false)
                     ->required(),
                 Forms\Components\Toggle::make('visible')
                     ->inline(false),
@@ -53,7 +54,8 @@ class SkillResource extends Resource
                 Tables\Columns\TextColumn::make('color')
                     ->sortable(),
                 Tables\Columns\IconColumn::make('visible')
-                    ->boolean(),
+                    ->boolean()
+                    ->action(fn ($record) => $record->toggleVisibility()),
                 Tables\Columns\TextColumn::make('created_at')
                     ->dateTime()
                     ->sortable()
@@ -67,6 +69,7 @@ class SkillResource extends Resource
                     ->sortable()
                     ->toggleable(isToggledHiddenByDefault: true),
             ])
+            ->reorderable('sort')
             ->filters([
                 //
             ])
@@ -102,6 +105,7 @@ class SkillResource extends Resource
         return parent::getEloquentQuery()
             ->withoutGlobalScopes([
                 SoftDeletingScope::class,
-            ]);
+            ])
+            ->orderBy('sort');
     }
 }

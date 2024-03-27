@@ -1,28 +1,29 @@
 @extends('head')
 
 @section('content')
-    <x-nav>
-    </x-nav>
-    <section class="card bg-black text-light pt-5">
+    {{-- removed card --}}
+    <section class="bg-black text-light pt-5">
 
         {{-- Education --}}
         <div class="container pt-5">
             <h1>Experience</h1>
             <div class="d-md-flex flex-wrap flex-column justify-content-between">
-                {{-- @foreach ($schools as $school) --}}
-                <div class="card custom-bg-dark text-light p-5 flex-fill m-2">
-                    <h5 class="gradient-text">{{ 'Collaboration with Creative Dev Labs Innovative Solutions' }}</h5>
-                    <p>{{ '2023-Present' }}</p>
-                    <ul>
-                        <li>{{ 'Worked with the Creative Dev Labs team in developing the Clinica Zamoras System' }}</li>
-                        <li>{{ 'Helped co-workers with PHP and Object-Oriented Programming roadblocks' }}</li>
-                        <li>{{ 'Learned and applied GitHub workflows' }}</li>
-                        <li>{{ 'Ongoing experience with Laravel, Filament, Livewire, and Alpine.js' }}</li>
-                    </ul>
-                    <div class="container">
+                @foreach ($experiences as $experience)
+                    <div class="card custom-bg-dark text-light p-5 flex-fill m-2">
+                        <h5 class="gradient-text">{{ $experience->title }}</h5>
+                        <p>{{ '2023-Present' }}</p>
+                        {{-- @dump($experience->details[0]['detail']) --}}
+                        @if (!empty($experience->details[0]['detail']))
+                            <ul>
+                                @foreach ($experience->details as $detail)
+                                    <li>{{ $detail['detail'] }}</li>
+                                @endforeach
+                            </ul>
+                        @endif
+                        <div class="container">
+                        </div>
                     </div>
-                </div>
-                {{-- @endforeach --}}
+                @endforeach
             </div>
         </div>
 
@@ -90,8 +91,10 @@
                 @foreach ($seminars as $seminar)
                     <div class="card custom-bg-dark text-light p-5 flex-fill m-2">
                         <h5 class="gradient-text">{{ $seminar->name }}</h5>
-                        <p><span>{{ $seminar->subheading }}</span> | <span
-                                style="color: #dab072;">{{ $seminar->date }}</span></p>
+                        {{-- @dump($seminar->parseDescription()) --}}
+                        <p>{{ $seminar->parseSubheading() }}</p>
+                        {{-- <p><span>{{ $seminar->subheading }}</span> | <span
+                                style="color: #dab072;">{{ $seminar->date }}</span></p> --}}
                         <p>{{ $seminar->description }}</p>
                         <div class="container">
                         </div>

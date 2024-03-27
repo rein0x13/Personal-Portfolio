@@ -17,6 +17,7 @@ return new class extends Migration
             $table->integer('percentage');
             $table->integer('color')->default(1);
             $table->boolean('visible')->default(true);
+            $table->integer('sort')->nullable();
             $table->timestamps();
             $table->softDeletes();
         });

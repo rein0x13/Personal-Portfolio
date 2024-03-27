@@ -18,6 +18,7 @@ return new class extends Migration
             $table->string('end')->nullable();
             $table->json('details')->nullable();
             $table->boolean('visible')->default(true);
+            $table->integer('sort')->nullable();
             $table->timestamps();
             $table->softDeletes();
         });

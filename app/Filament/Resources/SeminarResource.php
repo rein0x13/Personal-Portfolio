@@ -17,7 +17,7 @@ class SeminarResource extends Resource
 {
     protected static ?string $model = Seminar::class;
 
-    protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
+    protected static ?string $navigationIcon = 'heroicon-o-presentation-chart-bar';
 
     public static function form(Form $form): Form
     {
@@ -52,7 +52,8 @@ class SeminarResource extends Resource
                     ->date()
                     ->sortable(),
                 Tables\Columns\IconColumn::make('visible')
-                    ->boolean(),
+                    ->boolean()
+                    ->action(fn ($record) => $record->toggleVisibility()),
                 Tables\Columns\TextColumn::make('created_at')
                     ->dateTime()
                     ->sortable()
@@ -66,6 +67,7 @@ class SeminarResource extends Resource
                     ->sortable()
                     ->toggleable(isToggledHiddenByDefault: true),
             ])
+            ->reorderable('sort')
             ->filters([
                 Tables\Filters\TrashedFilter::make(),
             ])
@@ -102,6 +104,7 @@ class SeminarResource extends Resource
         return parent::getEloquentQuery()
             ->withoutGlobalScopes([
                 SoftDeletingScope::class,
-            ]);
+            ])
+            ->orderBy('sort');
     }
 }

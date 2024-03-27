@@ -35,7 +35,10 @@ class TechStacksRelationManager extends RelationManager
             ->columns([
                 Tables\Columns\TextColumn::make('skill.name')
                     ->placeholder("SOFT DELETED"),
+                // Tables\Columns\TextColumn::make('sort')
             ])
+            // ->defaultSort('sort')
+            ->reorderable('sort')
             ->filters([
                 Tables\Filters\TrashedFilter::make(),
             ])
@@ -60,5 +63,6 @@ class TechStacksRelationManager extends RelationManager
             ->withoutGlobalScopes([
                 SoftDeletingScope::class,
             ]);
+        // ->orderBy('sort');
     }
 }

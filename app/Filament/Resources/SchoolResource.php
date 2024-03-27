@@ -39,7 +39,9 @@ class SchoolResource extends Resource
                     ->columnSpanFull(),
                 Forms\Components\Toggle::make('visible')
                     ->required(),
-            ]);
+            ])
+            ->columns(1)
+            ->inlineLabel();
     }
 
     public static function table(Table $table): Table
@@ -55,7 +57,8 @@ class SchoolResource extends Resource
                 Tables\Columns\TextColumn::make('course')
                     ->searchable(),
                 Tables\Columns\IconColumn::make('visible')
-                    ->boolean(),
+                    ->boolean()
+                    ->action(fn ($record) => $record->toggleVisibility()),
                 Tables\Columns\TextColumn::make('created_at')
                     ->dateTime()
                     ->sortable()
@@ -69,6 +72,7 @@ class SchoolResource extends Resource
                     ->sortable()
                     ->toggleable(isToggledHiddenByDefault: true),
             ])
+            ->reorderable('sort')
             ->filters([
                 Tables\Filters\TrashedFilter::make(),
             ])
@@ -105,6 +109,7 @@ class SchoolResource extends Resource
         return parent::getEloquentQuery()
             ->withoutGlobalScopes([
                 SoftDeletingScope::class,
-            ]);
+            ])
+            ->orderBy('sort');
     }
 }

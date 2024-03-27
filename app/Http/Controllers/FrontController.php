@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Experience;
 use App\Models\Work;
 use App\Models\Skill;
 use App\Models\School;
@@ -18,10 +19,16 @@ class FrontController extends Controller
     public function background()
     {
         return view('pages.background', [
-            'schools'   => School::whereVisible(true)->get(),
-            'skills'    => Skill::whereVisible(true)->get(),
-            'works'     => Work::whereVisible(true)->get(),
-            'seminars'  => Seminar::whereVisible(true)->get(),
+            'experiences'   => Experience::whereVisible(true)->orderBy('sort')->get(),
+            'schools'       => School::whereVisible(true)->orderBy('sort')->get(),
+            'skills'        => Skill::whereVisible(true)->orderBy('sort')->get(),
+            'works'         => Work::whereVisible(true)->orderBy('sort')->get(),
+            'seminars'      => Seminar::whereVisible(true)->orderBy('sort')->get(),
         ]);
+    }
+
+    public function contact()
+    {
+        return view('pages.contact');
     }
 }

@@ -19,6 +19,7 @@ return new class extends Migration
             $table->string('course')->nullable();
             $table->text('notes')->nullable();
             $table->boolean('visible')->default(true);
+            $table->integer('sort')->nullable();
             $table->timestamps();
             $table->softDeletes();
         });

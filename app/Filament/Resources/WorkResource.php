@@ -46,7 +46,8 @@ class WorkResource extends Resource
                 Tables\Columns\TextColumn::make('description')
                     ->searchable(),
                 Tables\Columns\IconColumn::make('visible')
-                    ->boolean(),
+                    ->boolean()
+                    ->action(fn ($record) => $record->toggleVisibility()),
                 Tables\Columns\TextColumn::make('created_at')
                     ->dateTime()
                     ->sortable()
@@ -60,6 +61,7 @@ class WorkResource extends Resource
                     ->sortable()
                     ->toggleable(isToggledHiddenByDefault: true),
             ])
+            ->reorderable('sort')
             ->filters([
                 //
             ])
@@ -87,5 +89,14 @@ class WorkResource extends Resource
             'create' => Pages\CreateWork::route('/create'),
             'edit' => Pages\EditWork::route('/{record}/edit'),
         ];
+    }
+
+    public static function getEloquentQuery(): Builder
+    {
+        return parent::getEloquentQuery()
+            ->withoutGlobalScopes([
+                SoftDeletingScope::class,
+            ])
+            ->orderBy('sort');
     }
 }

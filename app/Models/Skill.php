@@ -3,20 +3,22 @@
 namespace App\Models;
 
 use App\Enums\ColorEnum;
+use App\Traits\HasVisibility;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Skill extends Model
 {
-    use HasFactory, SoftDeletes;
+    use HasFactory, SoftDeletes, HasVisibility;
 
     protected $guarded = [];
 
     public function casts()
     {
         return [
-            'color' => ColorEnum::class,
+            'color'     => ColorEnum::class,
+            'visible'   => 'boolean',
         ];
     }
 
@@ -24,14 +26,6 @@ class Skill extends Model
     {
         return (!empty($value)) ? ucwords($value) : null;
     }
-
-    // public function getColorAttribute()
-    // {
-    //     if (empty($this->color)) {
-    //         $id = (($this->id - 1) % 5) + 1;
-    //         return ColorEnum::tryFrom($id)->color();
-    //     }
-    // }
 
     public function techStack()
     {
