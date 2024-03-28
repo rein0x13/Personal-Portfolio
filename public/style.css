@@ -10,20 +10,27 @@
   /* --accent-color: #6cace4; */
   --accent-color: #ffce80;
   --accent-color-secondary: #ffe8c4;
-  --accent-gradient: linear-gradient(45.4deg, #f49242 7.41%, #fbf2b1 98.99%);
+  /* --accent-gradient: linear-gradient(45.4deg, #f49242 7.41%, #fbf2b1 98.99%); */
+  --accent-gradient: linear-gradient(45.4deg, #11e0f6 7.41%, #8bc7ea 98.99%);
 }
 
 .form-control:focus {
-  /* border-color: #FF0000 !important; */
-  border-color: #ffce80b4 !important;
+  border-color: #11e0f6 !important;
+  /* border-color: #ffce80b4 !important; */
 
   /* box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(255, 0, 0, 0.6) !important; */
   box-shadow: none !important;
 }
 
+.underline {
+  text-decoration: 3px overline #11e0f655;
+}
+
 .custom-bg-dark {
   /* background-color: #1a1919 !important; */
-  background-color: #09090b !important;
+  /* background-color: #09090b !important; */
+  background-color: #09090baa !important;
+  backdrop-filter: blur(15px);
 }
 
 .card {
@@ -122,10 +129,26 @@ body::-webkit-scrollbar {
   display: none;
 }
 
+.bg-img-darkened {
+  background: url("img/background-darkened.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+
+  background-position: center;
+
+}
+
+.bg-overlay {
+  /* backdrop-filter: blur(15px); */
+  background-color: #000000aa;
+}
+
 .hero {
   /* background: #111111; */
   /* background: #1c1c1c; */
-  background: url("img/profilebg3.jpg");
+  background: url("img/background-darkened.jpg");
+
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -150,7 +173,8 @@ body::-webkit-scrollbar {
     rgba(51, 210, 255, 1) 25%,
     rgba(221, 87, 137, 1) 50%
   ); */
-  background: linear-gradient(45.4deg, #f49242 7.41%, #fbf2b1 98.99%) !important;
+  /* background: linear-gradient(45.4deg, #f49242 7.41%, #fbf2b1 98.99%) !important; */
+  background: var(--accent-gradient) !important;
   background-clip: text !important;
   -webkit-background-clip: text !important;
   -webkit-text-fill-color: transparent !important;
@@ -185,7 +209,8 @@ body::-webkit-scrollbar {
   cursor: pointer;
   width: fit-content;
   background: #0c0c0c5c;
-  border: 2px solid #ffce80b4 !important;
+  /* border: 2px solid #ffce80b4 !important; */
+  border: 2px solid #11e0f6b4 !important;
   padding: 7px 20px;
   /* border-radius: 5px; */
 }

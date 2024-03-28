@@ -1,4 +1,5 @@
-<nav class="navbar navbar-expand-lg bg-black navbar-dark py-3 fixed-top">
+<nav class="navbar navbar-expand-lg navbar-dark py-3 fixed-top "
+    style="backdrop-filter: blur(15px); background-color:#00000055;">
     <div class="container">
         <a href="https://github.com/rein0x13" target="_blank" class="navbar-brand gradient-text">rein_0x13</a>
 
@@ -23,14 +24,14 @@
                 </li>
                 @auth
                     <li class="nav-item">
-                        <a href="{{ route('filament.dashboard.home') }}"
-                            class="nav-link card text-light bg-black ps-lg-5 ms-lg-5 gradient-button">DASHBOARD</a>
+                        <a href="{{ route('filament.dashboard.home') }}" {{-- class="nav-link card text-light bg-black ps-lg-5 ms-lg-5 gradient-button">DASHBOARD</a> --}}
+                            class="nav-link  ms-lg-5">DASHBOARD</a>
                     </li>
                 @endauth
                 @guest
                     <li class="nav-item">
-                        <a href="{{ route('filament.dashboard.auth.login') }}"
-                            class="nav-link card text-light bg-black ps-lg-5 ms-lg-5 gradient-button">LOGIN</a>
+                        <a href="{{ route('filament.dashboard.auth.login') }}" {{-- class="nav-link card text-light bg-black ps-lg-5 ms-lg-5 gradient-button">LOGIN</a> --}}
+                            class="nav-link ms-lg-5">LOGIN</a>
                     </li>
                 @endguest
             </ul>

@@ -35,7 +35,6 @@ class TechStacksRelationManager extends RelationManager
             ->columns([
                 Tables\Columns\TextColumn::make('skill.name')
                     ->placeholder("SOFT DELETED"),
-                // Tables\Columns\TextColumn::make('sort')
             ])
             // ->defaultSort('sort')
             ->reorderable('sort')
@@ -43,7 +42,9 @@ class TechStacksRelationManager extends RelationManager
                 Tables\Filters\TrashedFilter::make(),
             ])
             ->headerActions([
-                Tables\Actions\CreateAction::make()->createAnother(false),
+                Tables\Actions\CreateAction::make()->createAnother(false)
+                    ->label('Associate Tech Stack')
+                    ->modalHeading('Associate Tech Stack'),
             ])
             ->actions([
                 Tables\Actions\EditAction::make(),

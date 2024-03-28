@@ -30,9 +30,10 @@ class Seminar extends Model
     public function parseSubheading()
     {
         if (!empty($this->subheading) && !empty($this->date)) {
-            return new HtmlString("{$this->subheading} | <span style=\"color: #dab072;\">{$this->date}</span>");
+            return new HtmlString("{$this->subheading} | <span style=\"color: #11e0f6cc;\">{$this->date}</span>");
         } else if (!empty($this->date)) {
-            return new HtmlString("<span style=\"color: #dab072;\">{$this->date}</span>");
+            // return new HtmlString("<span style=\"color: #dab072;\">{$this->date}</span>");
+            return new HtmlString("<span style=\"color: #11e0f6cc;\">{$this->date}</span>");
         } else if (!empty($this->subheading)) {
             return $this->subheading;
         }

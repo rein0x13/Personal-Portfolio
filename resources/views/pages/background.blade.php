@@ -2,11 +2,12 @@
 
 @section('content')
     {{-- removed card --}}
-    <section class="bg-black text-light pt-5">
+    <section class="bg-black text-light py-5 bg-img-darkened">
 
+        {{-- <div class="bg-overlay"> --}}
         {{-- Education --}}
         <div class="container pt-5">
-            <h1>Experience</h1>
+            <h1>experience</h1>
             <div class="d-md-flex flex-wrap flex-column justify-content-between">
                 @foreach ($experiences as $experience)
                     <div class="card custom-bg-dark text-light p-5 flex-fill m-2">
@@ -26,10 +27,9 @@
                 @endforeach
             </div>
         </div>
-
         {{-- Education --}}
         <div class="container pt-5">
-            <h1>Education</h1>
+            <h1>education</h1>
             <div class="d-md-flex flex-wrap flex-row justify-content-between">
                 @foreach ($schools as $school)
                     <div class="card custom-bg-dark text-light p-5 flex-fill m-2">
@@ -42,10 +42,9 @@
                 @endforeach
             </div>
         </div>
-
         {{-- Skills --}}
         <div class="container pt-5">
-            <h1 class="mb-3">Skills</h1>
+            <h1 class="mb-3">skills</h1>
             <div class="card custom-bg-dark text-light m-2 p-4">
                 @foreach ($skills as $skill)
                     <div class="container p-2">
@@ -58,13 +57,11 @@
                         </div>
                     </div>
                 @endforeach
-
             </div>
         </div>
-
         {{-- Past Works --}}
         <div class="container pt-5">
-            <h1>Past Works</h1>
+            <h1>past_works</h1>
             <div class="d-md-flex flex-wrap flex-row justify-content-between">
                 @foreach ($works as $work)
                     <div class="card custom-bg-dark text-light p-5 flex-fill m-2">
@@ -83,10 +80,9 @@
                 @endforeach
             </div>
         </div>
-
         {{-- Seminars --}}
         <div class="container pt-5">
-            <h1>Seminars</h1>
+            <h1>seminars</h1>
             <div class="d-md-flex flex-wrap flex-column justify-content-between">
                 @foreach ($seminars as $seminar)
                     <div class="card custom-bg-dark text-light p-5 flex-fill m-2">
@@ -94,7 +90,7 @@
                         {{-- @dump($seminar->parseDescription()) --}}
                         <p>{{ $seminar->parseSubheading() }}</p>
                         {{-- <p><span>{{ $seminar->subheading }}</span> | <span
-                                style="color: #dab072;">{{ $seminar->date }}</span></p> --}}
+                                    style="color: #dab072;">{{ $seminar->date }}</span></p> --}}
                         <p>{{ $seminar->description }}</p>
                         <div class="container">
                         </div>
@@ -102,6 +98,7 @@
                 @endforeach
             </div>
         </div>
+        {{-- </div> --}}
 
 
         <script>

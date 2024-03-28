@@ -25,7 +25,8 @@ class DashboardPanelProvider extends PanelProvider
 {
     public function panel(Panel $panel): Panel
     {
-        $logo = '<a href="/" style="background: linear-gradient(45.4deg, #f49242 7.41%, #fbf2b1 98.99%) !important; background-clip: text !important; -webkit-background-clip: text !important; -webkit-text-fill-color: transparent !important; width: fit-content !important;">rein_0x13</a>';
+        // $logo = '<a href="/" style="background: linear-gradient(45.4deg, #f49242 7.41%, #fbf2b1 98.99%) !important; background-clip: text !important; -webkit-background-clip: text !important; -webkit-text-fill-color: transparent !important; width: fit-content !important;">rein_0x13</a>';
+        $logo = '<a href="/" style="background: linear-gradient(45.4deg, #11e0f6 7.41%, #8bc7ea 98.99%) !important; background-clip: text !important; -webkit-background-clip: text !important; -webkit-text-fill-color: transparent !important; width: fit-content !important;">rein_0x13</a>';
 
         return $panel
             ->default()
@@ -33,7 +34,7 @@ class DashboardPanelProvider extends PanelProvider
             ->path('dashboard')
             ->brandName(new HtmlString($logo))
             ->login(Login::class)
-            ->topbar('false')
+            // ->topbar('false')
             ->registration()
             // ->passwordReset()
             ->profile()
@@ -42,16 +43,16 @@ class DashboardPanelProvider extends PanelProvider
             ->font('Poppins')
             ->colors([
                 // 'primary' => Color::Amber,
+                'primary' => Color::Sky,
                 'danger' => Color::Rose,
                 'gray' => Color::Zinc,
                 'info' => Color::Blue,
-                'primary' => Color::Amber,
                 'success' => Color::Emerald,
                 'warning' => Color::Orange,
             ])
             ->darkMode(isForced: true)
             ->defaultThemeMode(ThemeMode::Dark)
-            // ->spa()
+            ->spa()
             // ->sidebarCollapsibleOnDesktop()
             ->topNavigation()
             ->discoverResources(in: app_path('Filament/Resources'), for: 'App\\Filament\\Resources')
