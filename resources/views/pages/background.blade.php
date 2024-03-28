@@ -6,7 +6,7 @@
 
         {{-- <div class="bg-overlay"> --}}
         {{-- Education --}}
-        <div class="container pt-5">
+        <div class="container pt-5" id="experiences">
             <h1>experience</h1>
             <div class="d-md-flex flex-wrap flex-column justify-content-between">
                 @foreach ($experiences as $experience)
@@ -28,7 +28,7 @@
             </div>
         </div>
         {{-- Education --}}
-        <div class="container pt-5">
+        <div class="container pt-5" id="education">
             <h1>education</h1>
             <div class="d-md-flex flex-wrap flex-row justify-content-between">
                 @foreach ($schools as $school)
@@ -43,7 +43,7 @@
             </div>
         </div>
         {{-- Skills --}}
-        <div class="container pt-5">
+        <div class="container pt-5" id="skills">
             <h1 class="mb-3">skills</h1>
             <div class="card custom-bg-dark text-light m-2 p-4">
                 @foreach ($skills as $skill)
@@ -60,7 +60,7 @@
             </div>
         </div>
         {{-- Past Works --}}
-        <div class="container pt-5">
+        <div class="container pt-5" id="works">
             <h1>past_works</h1>
             <div class="d-md-flex flex-wrap flex-row justify-content-between">
                 @foreach ($works as $work)
@@ -81,7 +81,7 @@
             </div>
         </div>
         {{-- Seminars --}}
-        <div class="container pt-5">
+        <div class="container pt-5" id="seminars">
             <h1>seminars</h1>
             <div class="d-md-flex flex-wrap flex-column justify-content-between">
                 @foreach ($seminars as $seminar)

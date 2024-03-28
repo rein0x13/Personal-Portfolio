@@ -6,11 +6,15 @@ use Filament\Pages;
 use Filament\Panel;
 use Filament\Widgets;
 use App\Support\Color;
+use Filament\Tables\Table;
 use Filament\PanelProvider;
 use Filament\Enums\ThemeMode;
 use Filament\Resources\Auth\Login;
 use Illuminate\Support\HtmlString;
+use Filament\View\PanelsRenderHook;
+use Illuminate\Contracts\View\View;
 use Filament\Http\Middleware\Authenticate;
+use Filament\Support\Facades\FilamentView;
 use Illuminate\Session\Middleware\StartSession;
 use Illuminate\Cookie\Middleware\EncryptCookies;
 use Illuminate\Routing\Middleware\SubstituteBindings;
@@ -28,6 +32,17 @@ class DashboardPanelProvider extends PanelProvider
         // $logo = '<a href="/" style="background: linear-gradient(45.4deg, #f49242 7.41%, #fbf2b1 98.99%) !important; background-clip: text !important; -webkit-background-clip: text !important; -webkit-text-fill-color: transparent !important; width: fit-content !important;">rein_0x13</a>';
         $logo = '<a href="/" style="background: linear-gradient(45.4deg, #11e0f6 7.41%, #8bc7ea 98.99%) !important; background-clip: text !important; -webkit-background-clip: text !important; -webkit-text-fill-color: transparent !important; width: fit-content !important;">rein_0x13</a>';
 
+        // FilamentView::registerRenderHook(
+        //     PanelsRenderHook::CONTENT_START,
+        //     fn (): View => view('components.background'),
+        // );
+
+        Table::configureUsing(function (Table $table): void {
+            $table
+                ->filtersLayout(\Filament\Tables\Enums\FiltersLayout::Dropdown)
+                ->poll();
+        });
+
         return $panel
             ->default()
             ->id('dashboard')
@@ -41,6 +56,7 @@ class DashboardPanelProvider extends PanelProvider
             ->simpleProfilePage(false)
             ->breadcrumbs(false)
             ->font('Poppins')
+            ->viteTheme('resources/css/filament/dashboard/theme.css')
             ->colors([
                 // 'primary' => Color::Amber,
                 'primary' => Color::Sky,

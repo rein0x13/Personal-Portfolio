@@ -1,0 +1,54 @@
+@import '/vendor/filament/filament/resources/css/theme.css';
+
+@config 'tailwind.config.js';
+
+
+/* .fi-topbar .fi-topbar-with-navigation>nav.bg-white.dark:bg-gray-900 { */
+/* background-color: aqua !important; */
+/* @apply bg-gradient-to-r from-rose-400 via-fuchsia-500 to-indigo-500 rounded-none hover:rotate-3 */
+/* } */
+
+/* .custom-bg-img {
+  background: url("img/background-darkened.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center;
+  height: 100vh;
+} */
+
+/* .fi-simple-layout {
+@apply bg-cyan-100/50;
+@apply bg-[url('img/background-darkened.jpg')];
+
+} */
+
+/*
+
+@layer components {
+  .fi-topbar {
+    background-color: rgb(11, 110, 196) !important;
+  }
+
+  .filament-button,
+  .filament-tables-container {
+    border-radius: 0 !important;
+  }
+
+  .filament-sidebar-item>a {
+    border-radius: 0 !important;
+  }
+
+  .filament-tables-pagination div {
+    border-radius: 0 !important;
+  }
+
+  .ring-2 {
+    border-radius: 0 !important;
+  }
+
+  input,
+  select {
+    border-radius: 0 !important;
+  }
+} */

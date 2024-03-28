@@ -31,7 +31,7 @@ class SeminarResource extends Resource
                 Forms\Components\DatePicker::make('date')
                     ->native(false),
                 Forms\Components\Textarea::make('description')
-                    // ->autosize()
+                    ->autosize()
                     ->columnSpanFull(),
                 Forms\Components\Toggle::make('visible')
                     ->required(),

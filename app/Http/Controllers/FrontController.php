@@ -31,4 +31,20 @@ class FrontController extends Controller
     {
         return view('pages.contact');
     }
+
+    public function sendMessage(Request $request)
+    {
+        $validated = $request->validate([
+            'sender' => ['required', 'min:5', 'max:100'],
+            'contact' => ['required', 'max:255'],
+            'message' => ['required'],
+        ]);
+
+        dd($validated);
+    }
+
+    public function listBlogs()
+    {
+        return view('pages.blogs.list');
+    }
 }

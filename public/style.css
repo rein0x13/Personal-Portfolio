@@ -12,6 +12,7 @@
   --accent-color-secondary: #ffe8c4;
   /* --accent-gradient: linear-gradient(45.4deg, #f49242 7.41%, #fbf2b1 98.99%); */
   --accent-gradient: linear-gradient(45.4deg, #11e0f6 7.41%, #8bc7ea 98.99%);
+  /* --accent-gradient: linear-gradient(45.4deg, #4fa1f9 7.41%, #ec19f8 98.99%); */
 }
 
 .form-control:focus {
@@ -22,8 +23,8 @@
   box-shadow: none !important;
 }
 
-.underline {
-  text-decoration: 3px overline #11e0f655;
+html {
+  background-color: black !important;
 }
 
 .custom-bg-dark {
@@ -48,14 +49,28 @@
 } */
 
 body {
-  background: var(--background-color) !important;
+  background: var(--background-color);
   color: var(--foreground-color);
   font-family: var(--font-primary) !important;
 }
 
 a {
-  text-decoration: none;
+  text-decoration: none !important;
   color: inherit;
+}
+
+/* #blog-sidebar {
+  min-width: 400px;
+  position: sticky;
+  top: 100px
+} */
+
+@media screen and (min-width: 990px) {
+  #blog-sidebar {
+    min-width: 400px;
+    position: sticky;
+    top: 100px
+  }
 }
 
 /*
@@ -136,7 +151,22 @@ body::-webkit-scrollbar {
   background-attachment: fixed;
 
   background-position: center;
+}
 
+::placeholder {
+  color: #333333 !important;
+  opacity: 1;
+  /* Firefox */
+}
+
+::-webkit-input-placeholder {
+  /* WebKit, Blink, Edge */
+  color: #333333 !important;
+}
+
+::-ms-input-placeholder {
+  /* Edge 12 -18 */
+  color: #333333 !important;
 }
 
 .bg-overlay {
@@ -197,8 +227,11 @@ body::-webkit-scrollbar {
   background: linear-gradient(45.4deg, #ff911b 7.41%, #f5143a 98.99%) !important;
 }
 
-.gradient-blue-violet {
+/* .gradient-blue-violet {
   background: linear-gradient(45.4deg, #156ed4 7.41%, #c701fe 98.99%) !important;
+} */
+.gradient-blue-violet {
+  background: linear-gradient(45.4deg, #156ed4 7.41%, #20bcff 98.99%) !important;
 }
 
 .gradient-button {

@@ -16,8 +16,8 @@
                 <li class="nav-item" id="background-nav-link">
                     <a href="{{ route('background') }}" class="nav-link">BACKGROUND</a>
                 </li>
-                <li class="nav-item">
-                    <a href="{{ route('profile') }}" class="nav-link">BLOGS</a>
+                <li class="nav-item" id="blogs-nav-link">
+                    <a href="{{ route('blogs.list') }}" class="nav-link">BLOGS</a>
                 </li>
                 <li class="nav-item" id="contact-nav-link">
                     <a href="{{ route('contact') }}" class="nav-link">CONTACT</a>

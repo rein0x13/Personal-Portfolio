@@ -24,6 +24,14 @@ class SkillSeeder extends Seeder
                 'percentage'    => 60,
             ],
             [
+                'name'          => 'Bootstrap',
+                'percentage'    => 40,
+            ],
+            [
+                'name'          => 'Tailwind CSS',
+                'percentage'    => 30,
+            ],
+            [
                 'name'          => 'JavaScript',
                 'percentage'    => 65,
             ],
@@ -34,6 +42,10 @@ class SkillSeeder extends Seeder
             [
                 'name'          => 'Laravel',
                 'percentage'    => 85,
+            ],
+            [
+                'name'          => 'Livewire',
+                'percentage'    => 60,
             ],
             [
                 'name'          => 'Filament',
@@ -64,22 +76,28 @@ class SkillSeeder extends Seeder
 
         foreach ($works as $work) {
             $model = Work::create($work);
-            if ($model->id == 1) {
+            if ($model->id == 2) {
                 foreach (Skill::all() as $skill) {
                     $model->techStacks()->create([
                         'skill_id'  => $skill->id,
                     ]);
                 }
             } else {
-                $x = 1;
+                // $x = 1;
                 foreach (Skill::all() as $skill) {
-                    if ($x >= 6) {
-                        break;
+                    if (in_array($skill->name, [
+                        'Bootstrap',
+                        'CSS',
+                    ])) {
+                        continue;
                     }
+                    // if ($x >= 6) {
+                    //     break;
+                    // }
                     $model->techStacks()->create([
                         'skill_id'  => $skill->id,
                     ]);
-                    $x++;
+                    // $x++;
                 }
             }
         }
