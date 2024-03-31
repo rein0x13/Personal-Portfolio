@@ -11,16 +11,16 @@
         <div class="collapse navbar-collapse" id="navmenu">
             <ul class="navbar-nav ms-auto">
                 <li class="nav-item" id="profile-nav-link">
-                    <a href="{{ route('profile') }}" class="nav-link">PROFILE</a>
+                    <a wire:navigate href="{{ route('profile') }}" class="nav-link">PROFILE</a>
                 </li>
                 <li class="nav-item" id="background-nav-link">
-                    <a href="{{ route('background') }}" class="nav-link">BACKGROUND</a>
+                    <a wire:navigate href="{{ route('background') }}" class="nav-link">BACKGROUND</a>
                 </li>
                 <li class="nav-item" id="blogs-nav-link">
-                    <a href="{{ route('blogs.list') }}" class="nav-link">BLOGS</a>
+                    <a wire:navigate href="{{ route('blogs.list') }}" class="nav-link">BLOGS</a>
                 </li>
                 <li class="nav-item" id="contact-nav-link">
-                    <a href="{{ route('contact') }}" class="nav-link">CONTACT</a>
+                    <a wire:navigate href="{{ route('contact') }}" class="nav-link">CONTACT</a>
                 </li>
                 @auth
                     <li class="nav-item">

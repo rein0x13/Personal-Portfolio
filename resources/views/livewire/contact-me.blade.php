@@ -26,7 +26,7 @@
             <textarea wire:model="message" class="form-control bg-transparent text-light" rows="5" name="message"
                 placeholder="Type your message here"></textarea>
             @error('message')
-                <p class="text-danger">{{ $message }}</p>
+                <p id="error-flash" class="text-danger">{{ $message }}</p>
             @enderror
         </div>
         {{-- <button wire:click.prevent="sendMessage" type="submit" id="contact-btn"

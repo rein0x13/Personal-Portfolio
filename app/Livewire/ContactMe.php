@@ -24,13 +24,6 @@ class ContactMe extends Component
 
     public function sendMessage()
     {
-        try {
-            $this->rateLimit(1);
-        } catch (TooManyRequestsException $exception) {
-            throw ValidationException::withMessages([
-                'message' => "Slow down! Please wait another {$exception->secondsUntilAvailable} seconds to send a message.",
-            ]);
-        }
         // $this->validate([
         //     'sender' => ['required', 'min:2', 'max:100'],
         //     'contact' => ['required', 'max:255'],
@@ -38,6 +31,14 @@ class ContactMe extends Component
         // ]);
 
         $validated = $this->validate();
+
+        try {
+            $this->rateLimit(1);
+        } catch (TooManyRequestsException $exception) {
+            throw ValidationException::withMessages([
+                'message' => "Slow down! Please wait another {$exception->secondsUntilAvailable} seconds to send a message.",
+            ]);
+        }
 
         Message::create([
             'sender' => $validated['sender'],

@@ -17,7 +17,8 @@ class BlogSeeder extends Seeder
         for ($i = 0; $i < 30; $i++) {
             $user->blogs()->create([
                 'title' => fake()->text(10),
-                'body' => fake()->text(),
+                'summary' => fake()->text(),
+                'body' => fake()->text(1000),
             ]);
         }
     }

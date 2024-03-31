@@ -1,6 +1,4 @@
-@extends('head')
-
-@section('content')
+<x-layout>
     <section class="hero bg-black d-flex align-items-center justify-content-center min-vh-100">
         <div class="container pt-5">
             <p class="text-light">Hello, I'm</p>
@@ -18,6 +16,5 @@
         document.getElementById('cta-button').addEventListener('click', () => window.location.href =
             "{{ route('contact') }}");
     </script>
-
     <script src="main.js"></script>
-@endsection
+</x-layout>

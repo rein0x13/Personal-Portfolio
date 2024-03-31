@@ -1,11 +1,5 @@
-@extends('head')
-
-@section('content')
-    {{-- removed card --}}
+<x-layout>
     <section class="bg-black text-light py-5 bg-img-darkened">
-
-        {{-- <div class="bg-overlay"> --}}
-        {{-- Education --}}
         <div class="container pt-5" id="experiences">
             <h1>experience</h1>
             <div class="d-md-flex flex-wrap flex-column justify-content-between">
@@ -105,4 +99,4 @@
             document.getElementById('background-nav-link').classList.add("gradient-text");
         </script>
     </section>
-@endsection
+</x-layout>

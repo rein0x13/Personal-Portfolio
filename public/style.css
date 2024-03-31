@@ -62,6 +62,7 @@ a {
 /* #blog-sidebar {
   min-width: 400px;
   position: sticky;
+  z-index: 99;
   top: 100px
 } */
 

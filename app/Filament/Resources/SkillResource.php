@@ -53,8 +53,6 @@ class SkillResource extends Resource
                     ->sortable(),
                 Tables\Columns\TextColumn::make('color')
                     ->sortable(),
-                Tables\Columns\TextColumn::make('sort')
-                    ->sortable(),
                 Tables\Columns\IconColumn::make('visible')
                     ->boolean()
                     ->action(fn ($record) => $record->toggleVisibility()),

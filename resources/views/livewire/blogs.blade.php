@@ -1,4 +1,4 @@
-<div wire:poll.keep.alive.10s class="container pt-5" id="seminars">
+<div wire:poll.keep.alive.10s class="container pt-5" id="blogs">
     <div class="d-lg-flex flex-row-reverse justify-content-between">
 
         <div class="p-5 m-2 card custom-bg-dark h-25" id="blog-sidebar">

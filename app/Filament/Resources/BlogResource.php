@@ -33,9 +33,12 @@ class BlogResource extends Resource
                     ->maxLength(255),
                 Forms\Components\Toggle::make('visible')
                     ->required(),
-                Forms\Components\Textarea::make('body')
+                Forms\Components\Textarea::make('summary')
                     ->required()
                     ->autosize()
+                    ->columnSpanFull(),
+                Forms\Components\RichEditor::make('body')
+                    ->required()
                     ->columnSpanFull(),
             ])
             ->columns(1)
