@@ -11,3 +11,4 @@ Route::get('/background', [FrontController::class, 'background'])->name('backgro
 Route::get('/contact', [FrontController::class, 'contact'])->name('contact');
 // Route::post('/contact', [FrontController::class, 'sendMessage'])->name('send-message');
 Route::get('/blogs', [FrontController::class, 'listBlogs'])->name('blogs.list');
+Route::get('/blog/{id}', [FrontController::class, 'readBlog'])->name('blog.view');

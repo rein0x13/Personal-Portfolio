@@ -17,6 +17,7 @@ return new class extends Migration
             $table->string('title');
             $table->text('summary');
             $table->longText('body');
+            $table->string('image')->nullable();
             $table->boolean('visible')->default(true);
             $table->timestamps();
             $table->softDeletes();

@@ -2,6 +2,7 @@
 
 namespace App\Providers\Filament;
 
+use App\Filament\Resources\Auth\EditProfile;
 use Filament\Pages;
 use Filament\Panel;
 use Filament\Widgets;
@@ -52,7 +53,7 @@ class DashboardPanelProvider extends PanelProvider
             // ->topbar('false')
             ->registration()
             // ->passwordReset()
-            ->profile()
+            ->profile(EditProfile::class)
             ->simpleProfilePage(false)
             ->breadcrumbs(false)
             ->font('Poppins')

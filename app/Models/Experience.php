@@ -19,4 +19,12 @@ class Experience extends Model
             'details' => 'json',
         ];
     }
+
+    public function getYearsAttribute()
+    {
+        if (!empty($this->end)) {
+            return $this->start . '-' . $this->end;
+        }
+        return $this->start;
+    }
 }

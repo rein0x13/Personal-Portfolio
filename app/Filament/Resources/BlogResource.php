@@ -25,21 +25,28 @@ class BlogResource extends Resource
     {
         return $form
             ->schema([
-                Forms\Components\Select::make('user_id')
-                    ->required()
-                    ->relationship(name: 'user', titleAttribute: 'name'),
+                // Forms\Components\Select::make('user_id')
+                //     ->required()
+                //     ->relationship(name: 'user', titleAttribute: 'name'),
                 Forms\Components\TextInput::make('title')
                     ->required()
                     ->maxLength(255),
-                Forms\Components\Toggle::make('visible')
-                    ->required(),
+                // Forms\Components\FileUpload::make('image')
+                //     ->image()
+                //     ->maxSize(2048),
                 Forms\Components\Textarea::make('summary')
                     ->required()
                     ->autosize()
                     ->columnSpanFull(),
                 Forms\Components\RichEditor::make('body')
                     ->required()
+                    // ->disableToolbarButtons([
+                    //     'attachFiles',
+                    // ])
                     ->columnSpanFull(),
+                Forms\Components\Toggle::make('visible')
+                    ->default(true)
+                    ->required(),
             ])
             ->columns(1)
             ->inlineLabel();

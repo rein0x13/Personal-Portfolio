@@ -13,8 +13,10 @@ class Blog extends Model
     protected $fillable = [
         'user_id',
         'title',
+        'summary',
         'body',
         'visible',
+        'image',
     ];
 
     public function user()
