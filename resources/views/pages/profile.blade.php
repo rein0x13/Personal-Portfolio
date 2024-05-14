@@ -2,7 +2,7 @@
         <section class="dark:text-white flex flex-col justify-center align-middle items-center">
             <div class="p-5 m-5">
                 <p class="text-light dark:text-white/80">Hello, I'm</p>
-                <h1 class="py-2 text-5xl font-semibold text-transparent bg-clip-text bg-gradient-to-r from-sky-400 to-sky-200">Jeremiah Barrientos</h1>
+                <h1 class="py-2 text-5xl font-semibold text-transparent bg-clip-text bg-gradient-to-r from-sky-400 to-sky-200">Rein de Larsenburg</h1>
                 <p class="text-light dark:text-white/80">
                     I'm an aspiring backend PHP web developer from Eastern Visayas,
                     Philippines. I'm a tinkerer at heart and love creating web applications.
