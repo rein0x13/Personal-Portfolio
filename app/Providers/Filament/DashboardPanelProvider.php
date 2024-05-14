@@ -51,7 +51,7 @@ class DashboardPanelProvider extends PanelProvider
             ->brandName(new HtmlString($logo))
             ->login(Login::class)
             // ->topbar('false')
-            ->registration()
+            // ->registration()
             // ->passwordReset()
             ->profile(EditProfile::class)
             ->simpleProfilePage(false)
