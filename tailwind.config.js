@@ -8,7 +8,7 @@ export default {
   theme: {
     extend: {
       backgroundImage: {
-        'rein-dark': "url('https://rein_0x13.test/img/background-darkened.jpg')"
+        'rein-dark': "url('/img/background-darkened.jpg')"
       }
     },
     fontFamily: {
